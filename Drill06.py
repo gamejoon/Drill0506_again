@@ -1,5 +1,4 @@
 from pico2d import *
-import random
 
 def load_resources():
     global TUK_ground, character
