@@ -27,6 +27,7 @@ def reset_world():
     global hx, hy
     global action
     global mx, my
+    global points
 
     mx, my = 0, 0
     running = True
@@ -34,6 +35,7 @@ def reset_world():
     frame = 0
     action = 3
 
+    points = [(100, 900), (1200, 800), (500, 100)]
     # set_new_target_arrow()
 
 def set_new_target_arrow():
@@ -52,6 +54,8 @@ def render_world():
     TUK_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
     arrow.draw(mx, my)
     character.clip_draw(frame * 100, 100 * action, 100, 100, cx, cy)
+    for p in points:
+        arrow.draw(p[0], p[1])
     update_canvas()
 
 def update_world():
